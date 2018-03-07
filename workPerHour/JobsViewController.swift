@@ -10,13 +10,16 @@ import UIKit
 
 class JobsViewController: UIViewController {
 
+    @IBOutlet var jobFor: UILabel!
     @IBOutlet var budgetAmount: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var jobNAme: UILabel!
+    @IBOutlet var bid: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-scrollView.contentSize.height = 1000
+
+stylingoutlets()
         // Do any additional setup after loading the view.
     }
 
@@ -26,6 +29,17 @@ scrollView.contentSize.height = 1000
     }
     
 
+    func stylingoutlets(){
+        scrollView.contentSize.height = 1000
+        descriptionLabel.layer.borderWidth = 0.7
+        jobFor.layer.borderWidth = 0.7
+        jobFor.layer.cornerRadius = 8
+        jobFor.layer.masksToBounds = true
+        jobFor.layer.borderColor = UIColor.blue.cgColor
+        bid.layer.masksToBounds = true
+        bid.layer.cornerRadius = 8
+        bid.layer.borderColor = UIColor.black.cgColor
+    }
     /*
     // MARK: - Navigation
 
