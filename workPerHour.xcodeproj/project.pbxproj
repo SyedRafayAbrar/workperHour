@@ -64,13 +64,21 @@
 				C8319B782041D4B20050DC01 /* ViewController.swift */,
 				C8319B7A2041D4B20050DC01 /* Main.storyboard */,
 				C8319B8C2041D8B90050DC01 /* JobsViewController.swift */,
-				C8319B882041D5400050DC01 /* TableViewCell.swift */,
-				C8319B892041D5400050DC01 /* TableViewCell.xib */,
+				C8BB9D962052F9570006304E /* cell */,
 				C8319B7D2041D4B20050DC01 /* Assets.xcassets */,
 				C8319B7F2041D4B20050DC01 /* LaunchScreen.storyboard */,
 				C8319B822041D4B20050DC01 /* Info.plist */,
 			);
 			path = workPerHour;
+			sourceTree = "<group>";
+		};
+		C8BB9D962052F9570006304E /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				C8319B882041D5400050DC01 /* TableViewCell.swift */,
+				C8319B892041D5400050DC01 /* TableViewCell.xib */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

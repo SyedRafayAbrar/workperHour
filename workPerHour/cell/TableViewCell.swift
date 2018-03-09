@@ -10,8 +10,12 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
+    @IBOutlet var category: UILabel!
+    @IBOutlet var jobName: UILabel!
+    @IBOutlet var amount: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
 

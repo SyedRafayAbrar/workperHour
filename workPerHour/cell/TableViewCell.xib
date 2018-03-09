@@ -22,7 +22,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvP-az-zec">
                         <rect key="frame" x="0.0" y="2" width="44.5" height="21"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" red="0.099832364726203493" green="0.52510803959438368" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6q0-5h-LB1">
@@ -31,15 +31,30 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbK-jk-kvf">
+                        <rect key="frame" x="255.5" y="0.0" width="49.5" height="53"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                        <color key="textColor" red="1" green="0.060611365776730208" blue="0.080040978555293241" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
+                <color key="backgroundColor" red="0.84822962870304897" green="0.97431785957372308" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="cvP-az-zec" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ClJ-CS-DVs"/>
                     <constraint firstItem="cvP-az-zec" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="FrD-s3-e03"/>
+                    <constraint firstAttribute="bottom" secondItem="HbK-jk-kvf" secondAttribute="bottom" id="Hsn-D3-g93"/>
                     <constraint firstAttribute="bottom" secondItem="6q0-5h-LB1" secondAttribute="bottom" constant="3" id="J06-xh-D7T"/>
+                    <constraint firstItem="HbK-jk-kvf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="OWQ-FK-MVz"/>
+                    <constraint firstAttribute="trailing" secondItem="HbK-jk-kvf" secondAttribute="trailing" constant="15" id="R3z-Uo-pvv"/>
                     <constraint firstItem="6q0-5h-LB1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="W9v-qG-1EC"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="amount" destination="HbK-jk-kvf" id="pjs-du-cgd"/>
+                <outlet property="category" destination="6q0-5h-LB1" id="FwG-c2-iEh"/>
+                <outlet property="jobName" destination="cvP-az-zec" id="UW4-90-7GM"/>
+            </connections>
             <point key="canvasLocation" x="34" y="59"/>
         </tableViewCell>
     </objects>
