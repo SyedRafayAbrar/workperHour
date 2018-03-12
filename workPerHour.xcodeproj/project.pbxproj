@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C804C68F205441960030892C /* selectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C804C68E205441960030892C /* selectViewController.swift */; };
+		C804C691205441B90030892C /* SubmitJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C804C690205441B90030892C /* SubmitJobViewController.swift */; };
 		C8319B772041D4B20050DC01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8319B762041D4B20050DC01 /* AppDelegate.swift */; };
 		C8319B792041D4B20050DC01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8319B782041D4B20050DC01 /* ViewController.swift */; };
 		C8319B7C2041D4B20050DC01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8319B7A2041D4B20050DC01 /* Main.storyboard */; };
@@ -15,9 +17,12 @@
 		C8319B8A2041D5400050DC01 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8319B882041D5400050DC01 /* TableViewCell.swift */; };
 		C8319B8B2041D5400050DC01 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8319B892041D5400050DC01 /* TableViewCell.xib */; };
 		C8319B8D2041D8B90050DC01 /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8319B8C2041D8B90050DC01 /* JobsViewController.swift */; };
+		C8B215042056DF2F004C3FE2 /* PROFILEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B215032056DF2F004C3FE2 /* PROFILEViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C804C68E205441960030892C /* selectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectViewController.swift; sourceTree = "<group>"; };
+		C804C690205441B90030892C /* SubmitJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitJobViewController.swift; sourceTree = "<group>"; };
 		C8319B732041D4B20050DC01 /* workPerHour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = workPerHour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8319B762041D4B20050DC01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8319B782041D4B20050DC01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +33,7 @@
 		C8319B882041D5400050DC01 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		C8319B892041D5400050DC01 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		C8319B8C2041D8B90050DC01 /* JobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
+		C8B215032056DF2F004C3FE2 /* PROFILEViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PROFILEViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +68,10 @@
 			children = (
 				C8319B762041D4B20050DC01 /* AppDelegate.swift */,
 				C8319B782041D4B20050DC01 /* ViewController.swift */,
+				C8B215032056DF2F004C3FE2 /* PROFILEViewController.swift */,
 				C8319B7A2041D4B20050DC01 /* Main.storyboard */,
+				C804C690205441B90030892C /* SubmitJobViewController.swift */,
+				C804C68E205441960030892C /* selectViewController.swift */,
 				C8319B8C2041D8B90050DC01 /* JobsViewController.swift */,
 				C8BB9D962052F9570006304E /* cell */,
 				C8319B7D2041D4B20050DC01 /* Assets.xcassets */,
@@ -154,6 +163,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C804C691205441B90030892C /* SubmitJobViewController.swift in Sources */,
+				C8B215042056DF2F004C3FE2 /* PROFILEViewController.swift in Sources */,
+				C804C68F205441960030892C /* selectViewController.swift in Sources */,
 				C8319B8D2041D8B90050DC01 /* JobsViewController.swift in Sources */,
 				C8319B8A2041D5400050DC01 /* TableViewCell.swift in Sources */,
 				C8319B792041D4B20050DC01 /* ViewController.swift in Sources */,
@@ -297,6 +309,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78T6UPLU6S;
 				INFOPLIST_FILE = workPerHour/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Rafay.workPerHour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -312,6 +325,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78T6UPLU6S;
 				INFOPLIST_FILE = workPerHour/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Rafay.workPerHour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
