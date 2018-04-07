@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class SubmitJobViewController: UIViewController {
-
+    @IBOutlet weak var jobTitle: UITextField!
+    @IBOutlet weak var timePrd: UITextField!
+    
+    @IBOutlet weak var jobFor: UITextView!
+    @IBOutlet weak var budget: UITextField!
+    @IBOutlet weak var jobDescription: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 

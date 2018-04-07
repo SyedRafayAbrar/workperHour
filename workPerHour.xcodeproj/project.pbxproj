@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50BBA46E7E4BAD71563C9FF0 /* Pods_workPerHour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623C7345F1099BD1530EE701 /* Pods_workPerHour.framework */; };
 		C804C68F205441960030892C /* selectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C804C68E205441960030892C /* selectViewController.swift */; };
 		C804C691205441B90030892C /* SubmitJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C804C690205441B90030892C /* SubmitJobViewController.swift */; };
 		C82CF963205DA4B500D813C6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82CF962205DA4B500D813C6 /* LoginViewController.swift */; };
@@ -21,9 +22,13 @@
 		C8B215042056DF2F004C3FE2 /* PROFILEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B215032056DF2F004C3FE2 /* PROFILEViewController.swift */; };
 		C8B7F6A82067911900C93C88 /* viewProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7F6A72067911900C93C88 /* viewProfileViewController.swift */; };
 		C8B7F6AA2067912C00C93C88 /* myJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7F6A92067912C00C93C88 /* myJobsViewController.swift */; };
+		C8D67D17206D5ACF00F1C1F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8D67D16206D5ACF00F1C1F5 /* GoogleService-Info.plist */; };
+		C8D67D19206D5E6200F1C1F5 /* helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D67D18206D5E6200F1C1F5 /* helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07A09175B92E7350B3244BA8 /* Pods-workPerHour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-workPerHour.debug.xcconfig"; path = "Pods/Target Support Files/Pods-workPerHour/Pods-workPerHour.debug.xcconfig"; sourceTree = "<group>"; };
+		623C7345F1099BD1530EE701 /* Pods_workPerHour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_workPerHour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C804C68E205441960030892C /* selectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectViewController.swift; sourceTree = "<group>"; };
 		C804C690205441B90030892C /* SubmitJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitJobViewController.swift; sourceTree = "<group>"; };
 		C82CF962205DA4B500D813C6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +45,9 @@
 		C8B215032056DF2F004C3FE2 /* PROFILEViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PROFILEViewController.swift; sourceTree = "<group>"; };
 		C8B7F6A72067911900C93C88 /* viewProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewProfileViewController.swift; sourceTree = "<group>"; };
 		C8B7F6A92067912C00C93C88 /* myJobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myJobsViewController.swift; sourceTree = "<group>"; };
+		C8D67D16206D5ACF00F1C1F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C8D67D18206D5E6200F1C1F5 /* helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helper.swift; sourceTree = "<group>"; };
+		DEBAE03E6399D35541B0FD1A /* Pods-workPerHour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-workPerHour.release.xcconfig"; path = "Pods/Target Support Files/Pods-workPerHour/Pods-workPerHour.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,17 +55,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50BBA46E7E4BAD71563C9FF0 /* Pods_workPerHour.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31ED064141E810C490927343 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				07A09175B92E7350B3244BA8 /* Pods-workPerHour.debug.xcconfig */,
+				DEBAE03E6399D35541B0FD1A /* Pods-workPerHour.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C8319B6A2041D4B20050DC01 = {
 			isa = PBXGroup;
 			children = (
 				C8319B752041D4B20050DC01 /* workPerHour */,
 				C8319B742041D4B20050DC01 /* Products */,
+				31ED064141E810C490927343 /* Pods */,
+				EA73CDE01FC5B805F988CD8A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,12 +96,14 @@
 				C8319B782041D4B20050DC01 /* ViewController.swift */,
 				C8B215032056DF2F004C3FE2 /* PROFILEViewController.swift */,
 				C8319B7A2041D4B20050DC01 /* Main.storyboard */,
+				C8D67D18206D5E6200F1C1F5 /* helper.swift */,
 				C8B7F6A92067912C00C93C88 /* myJobsViewController.swift */,
 				C8B7F6A72067911900C93C88 /* viewProfileViewController.swift */,
 				C82CF962205DA4B500D813C6 /* LoginViewController.swift */,
 				C804C690205441B90030892C /* SubmitJobViewController.swift */,
 				C804C68E205441960030892C /* selectViewController.swift */,
 				C8319B8C2041D8B90050DC01 /* JobsViewController.swift */,
+				C8D67D16206D5ACF00F1C1F5 /* GoogleService-Info.plist */,
 				C8BB9D962052F9570006304E /* cell */,
 				C8319B7D2041D4B20050DC01 /* Assets.xcassets */,
 				C8319B7F2041D4B20050DC01 /* LaunchScreen.storyboard */,
@@ -99,6 +121,14 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
+		EA73CDE01FC5B805F988CD8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				623C7345F1099BD1530EE701 /* Pods_workPerHour.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +136,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8319B852041D4B20050DC01 /* Build configuration list for PBXNativeTarget "workPerHour" */;
 			buildPhases = (
+				A0E65974A2122E9339AEEDAD /* [CP] Check Pods Manifest.lock */,
 				C8319B6F2041D4B20050DC01 /* Sources */,
 				C8319B702041D4B20050DC01 /* Frameworks */,
 				C8319B712041D4B20050DC01 /* Resources */,
+				A14A2F54706B689C4801EFE3 /* [CP] Embed Pods Frameworks */,
+				E9C2ABDDA4DE4655E357C95B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -160,12 +193,77 @@
 			files = (
 				C8319B812041D4B20050DC01 /* LaunchScreen.storyboard in Resources */,
 				C8319B8B2041D5400050DC01 /* TableViewCell.xib in Resources */,
+				C8D67D17206D5ACF00F1C1F5 /* GoogleService-Info.plist in Resources */,
 				C8319B7E2041D4B20050DC01 /* Assets.xcassets in Resources */,
 				C8319B7C2041D4B20050DC01 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A0E65974A2122E9339AEEDAD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-workPerHour-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A14A2F54706B689C4801EFE3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-workPerHour/Pods-workPerHour-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-workPerHour/Pods-workPerHour-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9C2ABDDA4DE4655E357C95B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-workPerHour/Pods-workPerHour-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C8319B6F2041D4B20050DC01 /* Sources */ = {
@@ -182,6 +280,7 @@
 				C8319B792041D4B20050DC01 /* ViewController.swift in Sources */,
 				C8B7F6A82067911900C93C88 /* viewProfileViewController.swift in Sources */,
 				C8319B772041D4B20050DC01 /* AppDelegate.swift in Sources */,
+				C8D67D19206D5E6200F1C1F5 /* helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +415,7 @@
 		};
 		C8319B862041D4B20050DC01 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07A09175B92E7350B3244BA8 /* Pods-workPerHour.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -332,6 +432,7 @@
 		};
 		C8319B872041D4B20050DC01 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEBAE03E6399D35541B0FD1A /* Pods-workPerHour.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

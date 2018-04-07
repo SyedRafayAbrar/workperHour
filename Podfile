@@ -7,4 +7,11 @@ target 'workPerHour' do
 
   # Pods for workPerHour
 
+  pod 'SwiftKeychainWrapper'
+pod 'IQKeyboardManagerSwift'
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
+pod 'Firebase/Database'
+pod 'Firebase/Storage'
+
 end

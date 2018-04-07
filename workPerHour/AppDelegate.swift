@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Firebase
+import SwiftKeychainWrapper
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,7 +16,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        FirebaseApp.configure()
         // Override point for customization after application launch.
+        
+        print("Chal gaya")
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        var initialViewController: UIViewController
+        print(KEY_UID)
+        if let _ = KeychainWrapper.defaultKeychainWrapper.string(forKey: KEY_UID)//your condition if user is already logged in or not
+        {
+            // if already logged in then redirect to MainViewController
+            print("if Chal gaya")
+            initialViewController = mainStoryboard.instantiateViewController(withIdentifier: "toHome") as! selectViewController // 'MainController' is the storyboard id of MainViewController
+        }
+        else
+        {
+            print("else Chal gaya")
+            //If not logged in then show LoginViewController
+            initialViewController = mainStoryboard.instantiateViewController(withIdentifier: "main") as! LoginViewController // 'LoginController' is the storyboard id of LoginViewController
+            
+        }
+        self.window?.rootViewController = initialViewController
+        
+        self.window?.makeKeyAndVisible()
         return true
     }
 
@@ -41,6 +66,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    
+    func applicationDidFinishLaunching(_ application: UIApplication) {
+       
+       
+    }
 
 }
 
