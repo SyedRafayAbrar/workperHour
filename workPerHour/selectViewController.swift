@@ -9,21 +9,39 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import SwiftKeychainWrapper
 
 class selectViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        let user = Auth.auth().currentUser
-//        
-//        if let user = user {
-//            uid = user.uid
-//            userName = user.email
-//        }
         
+        
+
+        let user = Auth.auth().currentUser
+        
+        if let user = user {
+           
+            uid=user.uid
+            userName=user.email
+            
+        }
+     
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if list.count == 0{
+        getID()
+        fetchData()
+        } else {
+            list.removeAll()
+            childKey.removeAll()
+            getID()
+            fetchData()
+        }
+    }
+ 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -42,7 +60,13 @@ class selectViewController: UIViewController {
     }
     
     @IBAction func logoutPressed(_ sender: Any) {
+        KeychainWrapper.standard.removeObject(forKey: KEY_UID)
+       try! Auth.auth().signOut()
         
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        var initialViewController: UIViewController
+        initialViewController = mainStoryboard.instantiateViewController(withIdentifier: "main") as! LoginViewController
+   present(initialViewController, animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation

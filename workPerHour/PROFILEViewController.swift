@@ -56,47 +56,8 @@ class PROFILEViewController: UIViewController, UIImagePickerControllerDelegate, 
     
 
     @IBAction func submitPressed(_ sender: Any) {
-        Auth.auth().createUser(withEmail: email.text!, password: password.text!) { (user, error) in
-            if error != nil {
-                let errorOcc = error?.localizedDescription
-                let alert = UIAlertController(title: "Error", message: errorOcc!, preferredStyle: UIAlertControllerStyle.alert)
-             let cancel = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-                alert.addAction(cancel)
-                self.present(alert, animated: true, completion: nil)
-            } else {
-                var data = NSData()
-                data = UIImageJPEGRepresentation(self.imageView.image!, 0.8)! as NSData
-                // set upload path
-                let filePath = "\(self.email.text!)/\("userPhoto")"
-                let metaData = StorageMetadata()
-                metaData.contentType = "image/jpeg"
-                self.storageref.child(filePath).putData(data as Data, metadata: metaData){(metaData,error) in
-                    if let error = error {
-                        print(error.localizedDescription)
-                        return
-                    }else{
-                        //store downloadURL
-                        let downloadURL = metaData!.downloadURL()!.absoluteString
-                        //store downloadURL at database
-                        userinfo = ["name":self.FULLNAME.text!,"email":self.email.text!,"Contact":self.contacttext.text!,"Portfolio":self.portfolioText.text!,"Amount":self.amounttext.text!,"userphoto":downloadURL]
-                        
-                       self.ref = Database.database().reference()
-                        self.ref.child("Users").childByAutoId().setValue(userinfo)
-                        //self.ref.child("photos").child(uid!).updateChildValues(["userPhoto": downloadURL])
-                        
-                        self.dismiss(animated: true, completion: nil)
-                    }
-                }
-
-               
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
-    
         
-    
-    
-    
+    postUser()
     }
     /*
     // MARK: - Navigation
@@ -118,6 +79,7 @@ class PROFILEViewController: UIViewController, UIImagePickerControllerDelegate, 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info["UIImagePickerControllerEditedImage"] as? UIImage {
             imageView.image = image
+            imageView.contentMode = .scaleAspectFit
             imgInfo=info["UIImagePickerControllerImageURL"]
             print("abrar___\(imgInfo)")
             print("rafay+++\(info)")
@@ -151,5 +113,50 @@ class PROFILEViewController: UIViewController, UIImagePickerControllerDelegate, 
         dismiss(animated: true, completion: nil)
     }
 }
-
+extension PROFILEViewController{
+    
+    func postUser() {
+        Auth.auth().createUser(withEmail: email.text!, password: password.text!, completion: { (user, error) in
+            if error != nil {
+                let errorOcc = error?.localizedDescription
+                let alert = UIAlertController(title: "Error", message: errorOcc!, preferredStyle: UIAlertControllerStyle.alert)
+                let cancel = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                alert.addAction(cancel)
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                var data = NSData()
+                data = UIImageJPEGRepresentation(self.imageView.image!, 0.8)! as NSData
+                // set upload path
+                let filePath = "\(self.email.text!)/\("userPhoto")"
+                let metaData = StorageMetadata()
+                metaData.contentType = "image/jpeg"
+                self.storageref.child(filePath).putData(data as Data, metadata: metaData){(metaData,error) in
+                    if error != nil {
+                        print("error occ \(error?.localizedDescription)")
+                       
+                    }else{
+                        //store downloadURL
+                        let downloadURL = metaData!.downloadURL()!.absoluteString
+                        //store downloadURL at database
+                        userinfo = ["name":self.FULLNAME.text!,"email":self.email.text!,"Contact":self.contacttext.text!,"Portfolio":self.portfolioText.text!,"Amount":self.amounttext.text!,"userphoto":downloadURL]
+                        
+                        self.ref = Database.database().reference()
+                        self.ref.child("Users").childByAutoId().setValue(userinfo)
+                        //self.ref.child("photos").child(uid!).updateChildValues(["userPhoto": downloadURL])
+                        
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
+                
+                
+                self.dismiss(animated: true, completion: nil)
+            }
+        })
+        
+        
+        
+        
+    }
+    
+}
 

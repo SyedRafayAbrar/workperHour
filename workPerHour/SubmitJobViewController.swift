@@ -17,9 +17,12 @@ class SubmitJobViewController: UIViewController {
     @IBOutlet weak var jobFor: UITextView!
     @IBOutlet weak var budget: UITextField!
     @IBOutlet weak var jobDescription: UITextView!
+    var ref: DatabaseReference!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        ref = Database.database().reference()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -28,7 +31,12 @@ class SubmitJobViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func submitPressed(_ sender: Any) {
+        JobInfo = ["JobTitle":jobTitle.text!,"Desc":jobDescription.text!,"budget":budget.text!,"time":timePrd.text!,"jobfor":jobFor.text!,"jobPoster":userName]
+        ref.child("Jobs").childByAutoId().setValue(JobInfo)
+        dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -39,4 +47,7 @@ class SubmitJobViewController: UIViewController {
     }
     */
 
+    @IBAction func backPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }

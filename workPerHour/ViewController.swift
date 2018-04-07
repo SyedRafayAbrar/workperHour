@@ -17,6 +17,9 @@ class ViewController: UIViewController,UITableViewDelegate {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+       tqbleVeiw.reloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -45,11 +48,14 @@ extension ViewController:UITableViewDataSource{
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3;
+        return list.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tempCell = Bundle.main.loadNibNamed("TableViewCell", owner: self, options: nil)?.first as! TableViewCell
+        tempCell.jobName.text! = list[indexPath.section]["JobTitle"]!
+        tempCell.category.text! = list[indexPath.section]["jobfor"]!
+        tempCell.amount.text! = list[indexPath.section]["budget"]!
         return tempCell
         
     }
@@ -63,6 +69,7 @@ extension ViewController:UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        newindex = indexPath.section
         performSegue(withIdentifier: "toDetail", sender: nil)
     }
     

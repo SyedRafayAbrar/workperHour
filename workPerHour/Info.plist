@@ -36,6 +36,8 @@
 	</array>
 	<key>NSAppleMusicUsageDescription</key>
 	<string>App wants to access image gallery!</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>App wants to Acces Image Gallery</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

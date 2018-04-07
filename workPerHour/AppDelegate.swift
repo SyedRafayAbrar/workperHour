@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 import SwiftKeychainWrapper
+import IQKeyboardManagerSwift
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -19,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         // Override point for customization after application launch.
-        
+          IQKeyboardManager.sharedManager().enable = true
         print("Chal gaya")
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -41,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = initialViewController
         
         self.window?.makeKeyAndVisible()
+       
         return true
     }
 

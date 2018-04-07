@@ -16,12 +16,23 @@ class JobsViewController: UIViewController {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var jobNAme: UILabel!
     @IBOutlet var bid: UIButton!
+    
+    @IBOutlet weak var timeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
 stylingoutlets()
+        
         // Do any additional setup after loading the view.
     }
+    override func viewDidAppear(_ animated: Bool) {
+        jobNAme.text! = list[newindex]["JobTitle"]!
+        jobFor.text! = list[newindex]["jobfor"]!
+        budgetAmount.text! = list[newindex]["budget"]!
+        descriptionLabel.text! = list[newindex]["Desc"]!
+        timeLabel.text! = list[newindex]["time"]!
+        
+    }
+ 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

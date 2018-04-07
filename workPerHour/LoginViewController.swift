@@ -31,14 +31,26 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signinPressed(_ sender: Any) {
+        if email.text! != "" {
         Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
             if error != nil {
+                let alert = UIAlertController(title: "Error!", message: (error?.localizedDescription)!, preferredStyle: UIAlertControllerStyle.alert)
+                let cancel = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                alert.addAction(cancel)
+                self.present(alert, animated: true, completion: nil)
                 print(error?.localizedDescription)
             }else{
                 let keychainResult = KeychainWrapper.standard.set((user?.uid)!, forKey: KEY_UID)
                 print(keychainResult)
                 self.performSegue(withIdentifier: "toOption", sender: nil)
             }
+        }
+        }else{
+            let alert = UIAlertController(title: "Error!", message: "Please fill all fields", preferredStyle: UIAlertControllerStyle.alert)
+            let cancel = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            alert.addAction(cancel)
+            self.present(alert, animated: true, completion: nil)
+            
         }
     }
     

@@ -15,7 +15,7 @@ class TableViewCell: UITableViewCell {
     @IBOutlet var amount: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        contentView.layer.cornerRadius = 4;
         // Initialization code
     }
 
@@ -24,5 +24,14 @@ class TableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+   
+}
+extension UITableViewCell {
+    func setTransparent() {
+        let bgView: UIView = UIView()
+        bgView.backgroundColor = .clear
+        
+        self.backgroundView = bgView
+        self.backgroundColor = .clear
+}
 }
