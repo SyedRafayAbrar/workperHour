@@ -44,18 +44,18 @@ extension ViewController:UITableViewDataSource{
         tqbleVeiw.layer.cornerRadius = 5;
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+return 1
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return list.count;
+           return list.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tempCell = Bundle.main.loadNibNamed("TableViewCell", owner: self, options: nil)?.first as! TableViewCell
-        tempCell.jobName.text! = list[indexPath.section]["JobTitle"]!
-        tempCell.category.text! = list[indexPath.section]["jobfor"]!
-        tempCell.amount.text! = list[indexPath.section]["budget"]!
+        tempCell.jobName.text! = list[indexPath.section]["JobTitle"]! as! String
+        tempCell.category.text! = list[indexPath.section]["jobfor"]! as! String
+        tempCell.amount.text! = list[indexPath.section]["budget"]! as! String
         return tempCell
         
     }
@@ -63,13 +63,14 @@ extension ViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60;
     }
-    
+
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10;
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         newindex = indexPath.section
+        newkey = indexPath.section
         performSegue(withIdentifier: "toDetail", sender: nil)
     }
     

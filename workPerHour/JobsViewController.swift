@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class JobsViewController: UIViewController {
 
@@ -25,11 +26,11 @@ stylingoutlets()
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
-        jobNAme.text! = list[newindex]["JobTitle"]!
-        jobFor.text! = list[newindex]["jobfor"]!
-        budgetAmount.text! = list[newindex]["budget"]!
-        descriptionLabel.text! = list[newindex]["Desc"]!
-        timeLabel.text! = list[newindex]["time"]!
+        jobNAme.text! = list[newindex]["JobTitle"]! as! String
+        jobFor.text! = list[newindex]["jobfor"]! as! String
+        budgetAmount.text! = "$ \(list[newindex]["budget"]! as! String) "
+        descriptionLabel.text! = list[newindex]["Desc"]! as! String
+        timeLabel.text! = list[newindex]["time"]! as! String
         
     }
  
@@ -61,4 +62,20 @@ stylingoutlets()
     }
     */
 
+    @IBAction func bidonitPressed(_ sender: Any) {
+        biders=list[newindex]["bider"] as! [String]
+        biders.append(userName)
+        let post = ["Desc": descriptionLabel.text!,
+                    "JobTitle": jobNAme.text!,
+                    "budget": budgetAmount.text!,
+                    "jobPoster": list[newindex]["jobPoster"],
+                    "jobfor": jobFor.text!,
+                    "time": timeLabel.text!,
+                    "bider": biders
+            
+        ]
+        let childUpdates = ["/Jobs/\(childKey[newkey])": post]
+        ref.updateChildValues(childUpdates)
+        dismiss(animated: true, completion: nil)
+    }
 }

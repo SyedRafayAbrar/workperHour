@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class myJobsViewController: UIViewController,UITableViewDelegate {
     var myJobs=[String]()
@@ -33,6 +34,9 @@ class myJobsViewController: UIViewController,UITableViewDelegate {
     }
     */
 
+    @IBAction func backPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 extension myJobsViewController: UITableViewDataSource{
     func tableMod(){
@@ -45,11 +49,14 @@ extension myJobsViewController: UITableViewDataSource{
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3;
+        return myList.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tempCell = Bundle.main.loadNibNamed("TableViewCell", owner: self, options: nil)?.first as! TableViewCell
+        tempCell.jobName.text! = myList[indexPath.section]["JobTitle"]! as! String
+        tempCell.category.text! = myList[indexPath.section]["jobfor"]! as! String
+        tempCell.amount.text! = myList[indexPath.section]["budget"]! as! String
         return tempCell
         
     }
@@ -72,7 +79,11 @@ extension myJobsViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
-            
+            let ref3 = ref.child("Jobs").child(myChildKey[indexPath.section])
+            ref3.removeValue()
+            myList.remove(at: indexPath.section)
+            tableView.reloadData()
+
         }
     }
     

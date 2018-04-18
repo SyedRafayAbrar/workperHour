@@ -32,7 +32,7 @@ class SubmitJobViewController: UIViewController {
     }
     
     @IBAction func submitPressed(_ sender: Any) {
-        JobInfo = ["JobTitle":jobTitle.text!,"Desc":jobDescription.text!,"budget":budget.text!,"time":timePrd.text!,"jobfor":jobFor.text!,"jobPoster":userName]
+        JobInfo = ["JobTitle":jobTitle.text!,"Desc":jobDescription.text!,"budget":budget.text!,"time":timePrd.text!,"jobfor":jobFor.text!,"jobPoster":userName,"bider":[String]()]
         ref.child("Jobs").childByAutoId().setValue(JobInfo)
         dismiss(animated: true, completion: nil)
     }

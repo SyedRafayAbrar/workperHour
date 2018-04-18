@@ -26,7 +26,6 @@ class PROFILEViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var password: UITextField!
     var imagePicker: UIImagePickerController!
-    var storageref:StorageReference!
     var ref: DatabaseReference!
 
     
@@ -130,7 +129,7 @@ extension PROFILEViewController{
                 let filePath = "\(self.email.text!)/\("userPhoto")"
                 let metaData = StorageMetadata()
                 metaData.contentType = "image/jpeg"
-                self.storageref.child(filePath).putData(data as Data, metadata: metaData){(metaData,error) in
+                storageref.child(filePath).putData(data as Data, metadata: metaData){(metaData,error) in
                     if error != nil {
                         print("error occ \(error?.localizedDescription)")
                        

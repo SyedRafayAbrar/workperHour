@@ -26,10 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         var initialViewController: UIViewController
+        
         print(KEY_UID)
         if let _ = KeychainWrapper.defaultKeychainWrapper.string(forKey: KEY_UID)//your condition if user is already logged in or not
         {
             // if already logged in then redirect to MainViewController
+          
+            
             print("if Chal gaya")
             initialViewController = mainStoryboard.instantiateViewController(withIdentifier: "toHome") as! selectViewController // 'MainController' is the storyboard id of MainViewController
         }

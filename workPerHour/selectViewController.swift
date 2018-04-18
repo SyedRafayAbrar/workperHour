@@ -12,33 +12,37 @@ import Firebase
 import SwiftKeychainWrapper
 
 class selectViewController: UIViewController {
-
+    @IBOutlet weak var profileViewButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        getUserInfo()
+        print(userName)
+//        getMyChildKey()
+//        fetchUserData()
+        profileViewButton.isHidden = true
 
-        let user = Auth.auth().currentUser
         
-        if let user = user {
-           
-            uid=user.uid
-            userName=user.email
-            
-        }
      
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
+       
         if list.count == 0{
+            getProfileKey()
+            getProfile()
+          
         getID()
         fetchData()
+            profileViewButton.isHidden = false
         } else {
             list.removeAll()
             childKey.removeAll()
             getID()
             fetchData()
+            profileViewButton.isHidden = false
+
         }
     }
  
